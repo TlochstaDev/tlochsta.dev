@@ -1,124 +1,163 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Website</title>
+  <title>tlochsta.dev</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <!-- Primary Meta Tags -->
 <title>tlochsta's personal website</title>
-<meta name="title" content="tlochsta's personal website" />
-<meta name="description" content="my personal website. what else did you think this was????" />
+<meta name="title" content="tlochsta.dev" />
+<meta name="description" content="my website i guess" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tlochsta.dev/" />
-<meta property="og:title" content="tlochsta's personal website" />
-<meta property="og:description" content="my personal website. what else did you think this was????" />
+<meta property="og:title" content="tlochsta.dev" />
+<meta property="og:description" content="my website i guess" />
 <meta property="og:image" content="https://i.ibb.co/HDBy6K9/tlochsta-1.gif" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="https://tlochsta.dev/" />
-<meta property="twitter:title" content="tlochsta's personal website" />
-<meta property="twitter:description" content="my personal website. what else did you think this was????" />
+<meta property="twitter:title" content="tlochsta.dev" />
+<meta property="twitter:description" content="my website i guess" />
 <meta property="twitter:image" content="https://i.ibb.co/HDBy6K9/tlochsta-1.gif" />
   <style>
-    body {
-      background-image: url("https://cdn.dribbble.com/users/185465/screenshots/4491309/fading_waves.gif");
-      background-size: cover;
-    }
+@import 'https://fonts.googleapis.com/css?family=Inconsolata';
+
+html {
+  min-height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100%;
+  background-color: #000000;
+  background-image: radial-gradient(#11581E, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Inconsolata', Helvetica, sans-serif;
+  font-size: 1.5rem;
+  color: rgba(128, 255, 128, 0.8);
+  text-shadow:
+      0 0 1ex rgba(51, 255, 51, 1),
+      0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.noise {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  opacity: .02;
+}
+
+.overlay {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:
+      repeating-linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0) 100%);
+  background-size: auto 4px;
+  z-index: 1;
+}
+
+.overlay::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      0deg,
+      transparent 0%,
+      rgba(32, 128, 32, 0.2) 2%,
+      rgba(32, 128, 32, 0.8) 3%,
+      rgba(32, 128, 32, 0.2) 3%,
+      transparent 100%);
+  background-repeat: no-repeat;
+  animation: scan 7.5s linear 0s infinite;
+}
+
+@keyframes scan {
+  0%        { background-position: 0 -100vh; }
+  35%, 100% { background-position: 0 100vh; }
+}
+
+.terminal {
+  box-sizing: inherit;
+  position: absolute;
+  height: 100%;
+  width: 1000px;
+  max-width: 100%;
+  padding: 4rem;
+  text-transform: uppercase;
+}
+
+.output {
+  color: rgba(128, 255, 128, 0.8);
+  text-shadow:
+      0 0 1px rgba(51, 255, 51, 0.4),
+      0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.output::before {
+  content: "> ";
+}
+
+/*
+.input {
+  color: rgba(192, 255, 192, 0.8);
+  text-shadow:
+      0 0 1px rgba(51, 255, 51, 0.4),
+      0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.input::before {
+  content: "$ ";
+}
+*/
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a::before {
+  content: "[";
+}
+
+a::after {
+  content: "]";
+}
+
+.errorcode {
+  color: white;
+}
   </style>
 </head>
 <body>
-  <div class="flex justify-center items-center h-screen">
-    <div class="bg-white rounded-lg p-8 shadow-md">
-          <h1 class="text-5xl font-bold mb-4">Hi, i'm tlochsta!</h1>
-    <h1 class="text-2xl font-bold mb-4">About Me</h1>
-      <p class="mb-4">I am a web developer who has knowledge about <br>HTML, CSS, JavaScript, and a little bit of Python.</p>
-      <h2 class="text-lg font-bold mb-2">Websites I Own:</h2>
- 
-        <div>
-          <a href="https://web.astro-arcade.app" class="flex items-center">
-            <i class="fas fa-external-link-alt mr-2"></i>
-            web.astro-arcade.app
-          </a>
-        </div>
-        <div>
-          <a href="https://tlochsta.net" class="flex items-center">
-            <i class="fas fa-external-link-alt mr-2"></i>
-            tlochsta.net
-          </a>
-        </div>
-        <div>
-          <a href="https://im-a.pro" class="flex items-center">
-            <i class="fas fa-external-link-alt mr-2"></i>
-            im-a.pro
-          </a>
-        </div>
-                <div>
-          <a href="https://tlochsta.dev" class="flex items-center">
-            <i class="fas fa-external-link-alt mr-2"></i>
-            tlochsta.dev
-          </a>
-        </div>
-                <div>
-          <a href="https://super-cool.app" class="flex items-center">
-            <i class="fas fa-external-link-alt mr-2"></i>
-            super-cool.app
-          </a>
-        </div>
-                <div>
-          <a href="https://super-cool.dev" class="flex items-center">
-            <i class="fas fa-external-link-alt mr-2"></i>
-            super-cool.dev
-          </a>
-        </div>
-          <h2 class="text-lg font-bold mb-2">My Socials:</h2>
- 
-        <div>
-          <a href="https://youtube.com/c/tlochsta" class="flex items-center">
-            <i class="fa-brands fa-youtube mr-2"></i>
-            tlochsta
-          </a>
-        </div>
-        <div>
-          <a href="https://dsc.gg/tlochsta" class="flex items-center">
-            <i class="fa-brands fa-discord mr-2"></i>
-            tlochsta
-          </a>
-        </div>
-        <div>
-          <a href="https://tiktok.com/@tlochsta" class="flex items-center">
-            <i class="fa-brands fa-tiktok mr-2"></i>
-            tlochsta
-          </a>
-        </div>
-                <div>
-          <a href="https://open.spotify.com/artist/1w2HDOVp5fmVxiVF76q063" class="flex items-center">
-            <i class="fa-brands fa-spotify mr-2"></i>
-            tlochsta
-          </a>
-        </div>
-                <div>
-          <a href="https://live.xbox.com/Profile?Gamertag=tlochstaMC" class="flex items-center">
-            <i class="fa-brands fa-xbox mr-2"></i>
-            tlochstaMC
-          </a>
-        </div>
-                        <div>
-          <a href="https://github.com/TlochstaDev" class="flex items-center">
-            <i class="fa-brands fa-github mr-2"></i>
-            TlochstaDev
-          </a>
-        </div>
-                                <div>
-          <a href="mailto:me@tlochsta.dev" class="flex items-center">
-            <i class="fas fa-envelope mr-2"></i>
-            me@tlochsta.dev
-          </a>
-        </div>
-
-    </div>
-  </div>
+<div class="noise"></div>
+<div class="overlay"></div>
+<div class="terminal">
+  <h1>Hello im <span class="errorcode">tlochsta</span></h1>
+  <p class="output">I am a web developer that makes cool stuff. Check out some of my cool sites by clicking below.</p>
+<a href="https://sparkdns.io">SparkDNS</a> <a href="https://media.tlochsta.dev">Fun Stuff</a>
+  <p class="output">Thanks for stopping by!</p>
+</div>
 </body>
 </html>
