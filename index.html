@@ -1,162 +1,191 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>tlochsta.dev</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <!-- Primary Meta Tags -->
-<meta name="title" content="tlochsta.dev" />
-<meta name="description" content="my website i guess" />
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://tlochsta.dev/" />
-<meta property="og:title" content="tlochsta.dev" />
-<meta property="og:description" content="my website i guess" />
-<meta property="og:image" content="https://i.ibb.co/HDBy6K9/tlochsta-1.gif" />
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://tlochsta.dev/" />
-<meta property="twitter:title" content="tlochsta.dev" />
-<meta property="twitter:description" content="my website i guess" />
-<meta property="twitter:image" content="https://i.ibb.co/HDBy6K9/tlochsta-1.gif" />
-  <style>
-@import 'https://fonts.googleapis.com/css?family=Inconsolata';
-
-html {
-  min-height: 100%;
-}
-
-body {
-  box-sizing: border-box;
-  height: 100%;
-  background-color: #000000;
-  background-image: radial-gradient(#11581E, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: 'Inconsolata', Helvetica, sans-serif;
-  font-size: 1.5rem;
-  color: rgba(128, 255, 128, 0.8);
-  text-shadow:
-      0 0 1ex rgba(51, 255, 51, 1),
-      0 0 2px rgba(255, 255, 255, 0.8);
-}
-
-.noise {
-  pointer-events: none;
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tlochsta.dev</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
+<style>
+.container {
+  text-align: center;
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1;
-  opacity: .02;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
-
-.overlay {
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background:
-      repeating-linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 0,
-      rgba(0, 0, 0, 0.3) 50%,
-      rgba(0, 0, 0, 0) 100%);
-  background-size: auto 4px;
-  z-index: 1;
-}
-
-.overlay::before {
-  content: "";
-  pointer-events: none;
-  position: absolute;
+div {
   display: block;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
+}
+html, body {
   height: 100%;
-  background-image: linear-gradient(
-      0deg,
-      transparent 0%,
-      rgba(32, 128, 32, 0.2) 2%,
-      rgba(32, 128, 32, 0.8) 3%,
-      rgba(32, 128, 32, 0.2) 3%,
-      transparent 100%);
-  background-repeat: no-repeat;
-  animation: scan 7.5s linear 0s infinite;
-}
-
-@keyframes scan {
-  0%        { background-position: 0 -100vh; }
-  35%, 100% { background-position: 0 100vh; }
-}
-
-.terminal {
-  box-sizing: inherit;
-  position: absolute;
-  height: 100%;
-  width: 1000px;
-  max-width: 100%;
-  padding: 4rem;
-  text-transform: uppercase;
-}
-
-.output {
-  color: rgba(128, 255, 128, 0.8);
-  text-shadow:
-      0 0 1px rgba(51, 255, 51, 0.4),
-      0 0 2px rgba(255, 255, 255, 0.8);
-}
-
-.output::before {
-  content: "> ";
-}
-
-/*
-.input {
-  color: rgba(192, 255, 192, 0.8);
-  text-shadow:
-      0 0 1px rgba(51, 255, 51, 0.4),
-      0 0 2px rgba(255, 255, 255, 0.8);
-}
-
-.input::before {
-  content: "$ ";
-}
-*/
-
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-a::before {
-  content: "[";
-}
-
-a::after {
-  content: "]";
-}
-
-.errorcode {
+  background-color: rgb(18, 18, 18);
   color: white;
+  font-family: Inter, sans-serif;
+  margin: 0px;
 }
-  </style>
-</head>
-<body>
-<div class="noise"></div>
-<div class="overlay"></div>
-<div class="terminal">
-  <h1>Hello im <span class="errorcode">tlochsta</span></h1>
-  <p class="output">I am a web developer that makes cool stuff. Check out some of my cool sites by clicking below.</p>
-<a href="https://sparkdns.io">SparkDNS</a> <a href="https://media.tlochsta.dev">Fun Stuff</a>
-  <p class="output">Thanks for stopping by!</p>
-</div>
-</body>
+html, body {
+  height: 100%;
+  background-color: rgb(18, 18, 18);
+  color: white;
+  font-family: Inter, sans-serif;
+  margin: 0px;
+}
+#canvas {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: radial-gradient(#18 0%, #18 50%, #18 100%);
+}
+  .btn {
+    color: black;
+    filter: drop-shadow(rgb(0, 0, 0) 5px 5px 10px);
+    padding: 15px 100px;
+    border-radius: 10px;
+    background: -webkit-linear-gradient(top, rgb(238, 238, 238), rgb(51, 51, 51));
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+  }
+.btn:hover {
+  color: white;
+  transition: all 0.3s ease 0s;
+  background: -webkit-linear-gradient(top, rgb(7, 113, 143), rgb(0, 53, 68));
+}
+  
+p, h1, h2, h3, h4, h5, h6, span, hr {
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+</style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <div class="container"><h1>tlochsta.dev</h1><hr><br><a href="https://dsc.gg/tlochsta" class="btn"><i class="fa-brands fa-discord"></i></a></div>
+<script>
+const canvas = document.querySelector("#canvas");
+const ctx = canvas.getContext("2d");
+
+let w, h, particles;
+let particleDistance = 40;
+let mouse = {
+	x: undefined,
+	y: undefined,
+	radius: 100
+}
+
+function init() {
+	resizeReset();
+	animationLoop();
+}
+
+function resizeReset() {
+	w = canvas.width = window.innerWidth;
+	h = canvas.height = window.innerHeight;
+
+	particles = [];
+	for (let y = (((h - particleDistance) % particleDistance) + particleDistance) / 2; y < h; y += particleDistance) {
+		for (let x = (((w - particleDistance) % particleDistance) + particleDistance) / 2; x < w; x += particleDistance) {
+			particles.push(new Particle(x, y));
+		}
+	}
+}
+
+function animationLoop() {
+	ctx.clearRect(0, 0, w, h);
+	drawScene();
+	requestAnimationFrame(animationLoop);
+}
+
+function drawScene() {
+	for (let i = 0; i < particles.length; i++) {
+		particles[i].update();
+		particles[i].draw();
+	}
+	drawLine();
+}
+
+function drawLine() {
+	for (let a = 0; a < particles.length; a++) {
+		for (let b = a; b < particles.length; b++) {
+			let dx = particles[a].x - particles[b].x;
+			let dy = particles[a].y - particles[b].y;
+			let distance = Math.sqrt(dx * dx + dy * dy);
+
+			if (distance < particleDistance * 1.5) {
+				opacity = 1 - (distance / (particleDistance * 1.5));
+				ctx.strokeStyle = "rgba(51,51,51," + opacity + ")";
+				ctx.lineWidth = 2;
+				ctx.beginPath();
+				ctx.moveTo(particles[a].x, particles[a].y);
+				ctx.lineTo(particles[b].x, particles[b].y);
+				ctx.stroke();
+			}
+		}
+	}
+}
+
+function mousemove(e) {
+	mouse.x = e.x;
+	mouse.y = e.y;
+}
+
+function mouseout() {
+	mouse.x = undefined;
+	mouse.y = undefined;
+}
+
+class Particle {
+	constructor(x, y) {
+		this.x = x;
+		this.y = y;
+		this.size = 4;
+		this.baseX = this.x;
+		this.baseY = this.y;
+		this.speed = (Math.random() * 25) + 5;
+	}
+	draw() {
+		ctx.fillStyle = "rgba(51,51,51,0.0001)";
+		ctx.beginPath();
+		ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+		ctx.closePath();
+		ctx.fill();
+	}
+	update() {
+		let dx = mouse.x - this.x;
+		let dy = mouse.y - this.y;
+		let distance = Math.sqrt(dx * dx + dy * dy);
+		let maxDistance = mouse.radius;
+		let force = (maxDistance - distance) / maxDistance; // 0 ~ 1
+		let forceDirectionX = dx / distance;
+		let forceDirectionY = dy / distance;
+		let directionX = forceDirectionX * force * this.speed;
+		let directionY = forceDirectionY * force * this.speed;
+
+		if (distance < mouse.radius) {
+			this.x -= directionX;
+			this.y -= directionY;
+		} else {
+			if (this.x !== this.baseX) {
+				let dx = this.x - this.baseX;
+				this.x -= dx / 10;
+			}
+			if (this.y !== this.baseY) {
+				let dy = this.y - this.baseY;
+				this.y -= dy / 10;
+			}
+		}
+	}
+}
+
+init();
+window.addEventListener("resize", resizeReset);
+window.addEventListener("mousemove", mousemove);
+window.addEventListener("mouseout", mouseout);
+
+</script>
+  </body>
 </html>
